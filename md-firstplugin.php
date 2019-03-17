@@ -22,3 +22,11 @@ function md_ringo_setup_post_type() {
 	register_post_type( 'book', $args );
 }
 add_action('init','md_ringo_setup_post_type');
+
+
+function md_ringo_install(){
+	
+	md_ringo_setup_post_type();
+	flush_rewrite_rules();
+}
+register_activation_hook(__FILE__,'md_ringo_install');
