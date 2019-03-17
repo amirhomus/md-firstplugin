@@ -30,3 +30,10 @@ function md_ringo_install(){
 	flush_rewrite_rules();
 }
 register_activation_hook(__FILE__,'md_ringo_install');
+
+
+function md_ringo_deactivation(){
+	
+	flush_rewrite_rules();
+}
+register_deactivation_hook(__FILE__,'md_ringo_deactivation');
